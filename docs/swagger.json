@@ -1,0 +1,97 @@
+{
+    "swagger": "2.0",
+    "info": {
+        "description": "This is a simple Documentation to send messages to Slack for Spam alert",
+        "version": "1.0.0",
+        "title": "Slack Spam API",
+        "license": {
+            "name": "Apache 2.0",
+            "url": "http://www.apache.org/licenses/LICENSE-2.0.html"
+        }
+    },
+    "schemes": ["http", "https"],
+    "host": "localhost:3000",
+    "basePath": "/",
+    "paths" : {
+        "/notify" : {
+            "post" : {
+                "summary" : "Send the alert",
+                "description": "Send the spam alert to slack",
+                "produces": ["application/json"],
+                "consumes": ["application/json"],
+                "parameters": [
+                    {
+                        "in": "body",
+                        "name": "body",
+                        "description": "request payload",
+                        "required": true,
+                        "schema": {
+                            "type": "object",
+                            "$ref": "#/definitions/Task"
+                                
+                            
+                        }
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "successful operation",
+                        "schema": {
+                            "type": "string"
+                        }
+                    },
+                    "409": {
+                        "description": "Invalid type",
+                        "schema": {
+                            "type": "object"
+                        }
+                    }
+                }
+            }
+        }
+        
+    }, 
+    "definitions": {
+        "ErrorResponse": {
+            "type": "object",
+            "properties": {
+                "message": "string"
+            }
+        },
+        "Task": {
+            "type": "object",
+            "properties": {
+                "RecordType": {
+                    "type": "string"
+                },
+                "Type": {
+                    "type": "string"
+                },
+                "TypeCode": {
+                    "type": "number"
+                },
+                "Name": {
+                    "type": "string"
+                },
+                "Tag": {
+                    "type": "string"
+                },
+                "MessageStream": {
+                    "type": "string"
+                },
+                "Description": {
+                    "type": "string"
+                },
+                "Email": {
+                    "type": "string"
+                },
+                "From": {
+                    "type": "string"
+                },
+                "BouncedAt": {
+                    "type": "string"
+                }
+            }
+        }
+    }
+}
