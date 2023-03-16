@@ -1,17 +1,5 @@
- # Local Development Setup
 
-## Technology stack
-
-- Node 18.12.0
-
-## Installation
-
-### Requirements
-
-
-### Requirements
-
-### Setting up the development environment
+### Installation
 
 
 1.  make .env file in root directory
@@ -20,7 +8,26 @@
    
 
     ```
+2.  Here's how to get Slack Api:
+    ```
+    - Go to the Slack API website and sign in to your Slack workspace.
 
+    - Navigate to the "Your Apps" page and select the app you want to use for sending alerts.
+
+    - Click on the "OAuth & Permissions" tab and scroll down to the "Scopes" section.
+
+    - Click the "Add an OAuth Scope" button for Bot Token Scopes and following scopes:
+        - chat:write
+        - channel:read
+        - group:read
+        - group:write" scope from the list
+
+    - Click the "Save Changes" button to update your app's permissions.
+
+    - Click on the install to workspace button
+
+    - Copy the API key that will be your Slack TOKEN for .env file
+    ```
 
 
 4.  Install the required packages by running the following command in the project root directory:
@@ -126,4 +133,4 @@ docker push  gcr.io/<project-name>/nodejs-local-build
   "From": "notifications@honeybadger.io",
   "BouncedAt": "2023-02-27T21:41:30Z"
 }                             | POST  |
-
+| <ul><li>[x] </li></ul>| Get Baskets by identifier      | /  api/baskets/{identifier}           | | GET  |
