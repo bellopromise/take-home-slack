@@ -121,16 +121,11 @@ docker push  gcr.io/<project-name>/nodejs-local-build
 |        | Page      | Endpoint      | Request Body                                                                                                                                                                            | Action  |
 |--------|-----------|---------------|---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|---|
                                                                                                                        |   |
-| <ul><li>[x] </li></ul>| Send Spam Alert  | /notify     | {
-  "RecordType": "Bounce",
-  "Type": "SpamNotification",
-  "TypeCode": 512,
-  "Name": "Spam notification",
-  "Tag": "",
-  "MessageStream": "outbound",
-  "Description": "The message was delivered, but was either blocked by the user, or classified as spam, bulk mail, or had rejected content.",
-  "Email": "zaphod@example.com",
-  "From": "notifications@honeybadger.io",
-  "BouncedAt": "2023-02-27T21:41:30Z"
-}                             | POST  |
+| <ul><li>[x] </li></ul>| Add to Basket  | /api/baskets     | {
+    "product_id":"2",
+    "quantity": 3,
+    "identifier":"Dell"
+}                                  | POST  |
 | <ul><li>[x] </li></ul>| Get Baskets by identifier      | /  api/baskets/{identifier}           | | GET  |
+| <ul><li>[x] </li></ul>| Delete Item from Baskets      | /api/baskets/{basketItemId}         |   |  DELETE |
+| <ul><li>[x] </li></ul>| Get Deleted Items      | /api/baskets/items/deleted        | |  GET |
