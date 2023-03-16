@@ -127,5 +127,3 @@ docker push  gcr.io/<project-name>/nodejs-local-build
     "identifier":"Dell"
 }                                  | POST  |
 | <ul><li>[x] </li></ul>| Get Baskets by identifier      | /  api/baskets/{identifier}           | | GET  |
-| <ul><li>[x] </li></ul>| Delete Item from Baskets      | /api/baskets/{basketItemId}         |   |  DELETE |
-| <ul><li>[x] </li></ul>| Get Deleted Items      | /api/baskets/items/deleted        | |  GET |
