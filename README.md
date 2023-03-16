@@ -2,13 +2,7 @@
 ### Installation
 
 
-1.  make .env file in root directory
-    ```
-    -Rename .env.example file to .env
-   
-
-    ```
-2.  Here's how to get Slack Api:
+1.  Get credentials from SLACK API:
     ```
     - Go to the Slack API website and sign in to your Slack workspace.
 
@@ -35,6 +29,7 @@
     ```bash
     npm i
     npm start
+      Application should be running on port 3000: http://localhost:3000/
     npm test to test
     ```
 
@@ -51,12 +46,12 @@ Before you get started with docker, the following needs to be installed:
 
 2.  After install, configure docker compose and run the following command:
 
-    ```
+    ```bash
     docker build -t slack-api .
     docker run -p 3000:3000 slack-api
     ```
 
-Congratulations! project should now be up and running for development purposes.
+  Application should be running on port 3000: http://localhost:3000/
 
 ## Documentation
  You can access the swagger documentation here: http://localhost:3000/api-docs/
@@ -106,24 +101,28 @@ docker images -a | grep gcr.io
 docker push  gcr.io/<project-name>/nodejs-local-build
 ```
 
-8. Now we can deploy our Image to Compute Engine
+8. Deploy Image to Compute Engine
 
 9. Create Firewall Rules
 
-10. Done your project is live
 
 
 
+## Implementation example
 
-
-## Implementation table
-
-|        | Page      | Endpoint      | Request Body                                                                                                                                                                            | Action  |
-|--------|-----------|---------------|---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|---|
-                                                                                                                       |   |
-| <ul><li>[x] </li></ul>| Add to Basket  | /api/baskets     | {
-    "product_id":"2",
-    "quantity": 3,
-    "identifier":"Dell"
-}                                  | POST  |
-| <ul><li>[x] </li></ul>| Get Baskets by identifier      | /  api/baskets/{identifier}           | | GET  |
+```
+  path: /notify
+  method: POST
+  Request Body: {
+  "RecordType": "Bounce",
+  "Type": "SpamNotification",
+  "TypeCode": 512,
+  "Name": "Spam notification",
+  "Tag": "",
+  "MessageStream": "outbound",
+  "Description": "The message was delivered, but was either blocked by the user, or classified as spam, bulk mail, or had rejected content.",
+  "Email": "zaphod@example.com",
+  "From": "notifications@honeybadger.io",
+  "BouncedAt": "2023-02-27T21:41:30Z"
+}
+```
